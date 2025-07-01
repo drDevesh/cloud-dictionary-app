@@ -8,10 +8,11 @@ function App() {
   const handleSearch = async () => {
     try {
       const res = await axios.get(
-        `https://<your-api-id>.execute-api.<region>.amazonaws.com/prod/get-definition?term=${term}`
+        `https://7iv56lhkcg.execute-api.us-east-1.amazonaws.com/prod/get-definition?term=${encodeURIComponent(term)}`
       );
-      setDefinition(res.data.definition);
+      setDefinition(res.data.definition || "Definition not found.");
     } catch (err) {
+      console.error(err);
       setDefinition("Definition not found or error occurred.");
     }
   };
@@ -27,7 +28,7 @@ function App() {
       fontFamily: "Arial, sans-serif"
     }}>
       <h1 style={{ color: "#fff", marginBottom: "2rem" }}>🌩️ Cloud Dictionary</h1>
-      
+
       <div style={{
         backgroundColor: "#ffffff",
         borderRadius: "16px",
