@@ -1,3 +1,18 @@
+# 🧠 Project Summary: Cloud Dictionary App (React + AWS)
+- 📌 Goal:
+- A web app where users can search cloud computing terms (e.g., “AWS KMS”) and get definitions stored in DynamoDB — all using serverless AWS services.
+
+- ✅ Final Architecture Overview
+- Frontend: React app deployed on AWS Amplify
+
+- Backend: Lambda function via API Gateway
+
+- Database: Amazon DynamoDB
+
+- Data Upload: Python script to upload JSON to DynamoDB
+
+- Communication: Frontend hits the API Gateway URL, which triggers Lambda and fetches data from DynamoDB
+- 
 # Step 1: Frontend Setup (React App) 
 - create a dict
 - Open the terminal
@@ -5,6 +20,14 @@
 - This will create a React app
 -  ``` npm install axios ```
 -  Run this to install Axios dependencies
+ -  cloud-dictionary-app/
+-│
+- ├── public/
+- ├── src/
+- │ ├── App.js # Main frontend logic
+- │ └── ...
+- ├── package.json
+- └── README.md
 -  Open the src/ folder
 -  Inside App.js, paste this
 ```
